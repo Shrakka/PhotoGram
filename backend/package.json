@@ -1,0 +1,30 @@
+{
+  "name": "photogram",
+  "version": "1.0.0",
+  "description": "share picture app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shrakka/PhotoGram.git"
+  },
+  "author": "enzo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shrakka/PhotoGram/issues"
+  },
+  "homepage": "https://github.com/Shrakka/PhotoGram#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "exif": "^0.6.0",
+    "exif-js": "^2.3.0",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
