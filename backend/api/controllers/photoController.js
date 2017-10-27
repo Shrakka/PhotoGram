@@ -30,10 +30,9 @@ exports.postPhoto = function(req, res) {
 exports.getPhoto = function(req, res) {
     Photo.findOne({_id: req.params.id}, (err, photo) => {
         if(err) {
-            res.send(err);
+            res.status(404).send(err);
         } else {
             if(photo) {
-
                 var exif = require('../exif/exif');
                 exif.readExif(photo.url);
                 res.send(photo)

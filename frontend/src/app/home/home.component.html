@@ -1,3 +1,9 @@
-<p>
-  home works!
-</p>
+<div class="gallery">
+  <div *ngFor="let photo of photos">
+    <div class="gallery-photo" (click)="onSelect(photo)">
+      <a [routerLink]="['/photo', photo._id]" routerLinkActive="active">
+        <img class="gallery-img" src="{{ photo.url }}" alt="{{ photo.url }}"/>
+      </a>
+    </div>
+  </div>
+</div>

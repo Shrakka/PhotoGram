@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import {PhotoService } from '../photo.service';
 
 @Component({
   selector: 'app-photo-detail',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotoDetailComponent implements OnInit {
 
-  constructor() { }
+  public photo;
+
+  constructor(private route: ActivatedRoute, private photoService: PhotoService, private router: Router) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      this.photoService.getPhoto(id)
+        .then(photo => {
+          this.photo = photo;
+        })
+        .catch(error => {
+          this.router.navigate(['404']);
+        });
+   });
   }
 
 }

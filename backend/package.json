@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Shrakka/PhotoGram#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "exif": "^0.6.0",
     "exif-js": "^2.3.0",
     "express": "^4.16.2",
