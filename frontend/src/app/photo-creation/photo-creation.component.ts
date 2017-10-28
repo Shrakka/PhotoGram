@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoService } from '../photo.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class PhotoCreationComponent implements OnInit {
   private fileList: FileList = null;
   private title: String = null;
 
-  constructor(private photoService: PhotoService) {
+  constructor(private photoService: PhotoService, private router: Router) {
   }
 
   ngOnInit() {
@@ -33,7 +34,8 @@ export class PhotoCreationComponent implements OnInit {
       formData.append('title', this.title.toString());
       this.photoService.postPhoto(formData)
         .then(data => {
-          console.log('success');
+          console.log('success', data);
+          this.router.navigate(['photo', (data as any)._id]);
         })
         .catch(error => {
           console.log(error);

@@ -46,7 +46,7 @@ exports.postPhoto = function(req, res) {
 
     if(req.file) {
         var exif = require('../exif/exif');
-        url   = req.file.filename;
+        url = req.file.filename;
 
         exif.readExif(req.file.filename)
             .then((data) => {
@@ -116,10 +116,10 @@ exports.postPhoto = function(req, res) {
             .catch((error) => {
                 console.log(error);
                 var noExifPhoto = new Photo({
-                    'title': req.body.title,
+                    'title': title,
                     'date': Date.now(),
-                    'place': 'place',
-                    'url': req.file.filename
+                    'place': {'lat': 0, 'lng': 0},
+                    'url': url
                 }).save((err, photo) => {
                     if(err) {
                         console.log(err);

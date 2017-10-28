@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {PhotoService } from '../photo.service';
+import { PhotoService } from '../photo.service';
 
 @Component({
   selector: 'app-photo-detail',
@@ -10,8 +10,6 @@ import {PhotoService } from '../photo.service';
 export class PhotoDetailComponent implements OnInit {
 
   public photo;
-  public lat = 50;
-  public lng = 10;
 
   constructor(private route: ActivatedRoute, private photoService: PhotoService, private router: Router) { }
 

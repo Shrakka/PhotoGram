@@ -1,9 +1,13 @@
-<div class="gallery">
-  <div *ngFor="let photo of photos">
-    <div class="gallery-photo" (click)="onSelect(photo)">
-      <a [routerLink]="['/photo', photo._id]" routerLinkActive="active">
-        <img class="gallery-img" src="{{ photo.url }}" alt="{{ photo.url }}"/>
-      </a>
+<div *ngIf="photos">
+
+  <div *ngIf="photos.length > 0; else noPhoto" class="gallery">
+    <div *ngFor="let photo of photos" class="photo-div">
+        <a [routerLink]="['/photo', photo._id]" routerLinkActive="active">
+          <img class="gallery-img" src="{{ photo.url }}" alt="{{ photo.url }}"/>
+        </a>
     </div>
   </div>
+
+  <ng-template #noPhoto>No photos yet!</ng-template>
+
 </div>

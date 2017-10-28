@@ -1,8 +1,16 @@
 <div class="photo-detail-container" *ngIf="photo">
+
     <div class="photo-detail-photo-container">
-        <img class="photo-detail "src="{{ photo.url }}" alt="photo.url" />
+        <img class="photo-detail" src="{{ photo.url }}" alt="photo.url" />
+        <div class="photo-info">
+            <p>{{ photo.title }}</p>
+            <p>{{ photo.date }}</p>
+            <p *ngIf="photo.place.lat !== 0">{{ photo.place }}</p>
+        </div>
     </div>
-    <agm-map [latitude]="lat" [longitude]="lng">
-            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>        
+
+    <agm-map *ngIf="photo.place.lat !== 0" [latitude]="photo.place.lat" [longitude]="photo.place.lng">
+            <agm-marker [latitude]="photo.place.lat" [longitude]="photo.place.lng"></agm-marker>        
     </agm-map>
+
 </div>
