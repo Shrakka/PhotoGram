@@ -1,3 +1,4 @@
-<p>
-  photo-creation works!
-</p>
+<input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".png, .jpg, .jpeg" />
+
+<input type="text" placeholder="your title" [(ngModel)]="title"/>
+<div (click)="upload()">Click to upload</div>

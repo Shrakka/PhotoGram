@@ -9,9 +9,9 @@ var PhotoSchema = new Schema({
     },
     date: {
         type: Date,
-        defaults: new Date(2013,2,1,0,70)
+        defaults: Date.now(),
     },
-    place: String,
+    place: Object,
     url: String
 });
 

@@ -1,5 +1,8 @@
-<div>
-
-<div>"photo.url not found"</div>
-
+<div class="photo-detail-container" *ngIf="photo">
+    <div class="photo-detail-photo-container">
+        <img class="photo-detail "src="{{ photo.url }}" alt="photo.url" />
+    </div>
+    <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>        
+    </agm-map>
 </div>
