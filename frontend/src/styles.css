@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Dosis|Pacifico|Fascinate+Inline|Poppins');
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+button {
+    border: none;
+}

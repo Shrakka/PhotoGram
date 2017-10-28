@@ -1,4 +1,21 @@
-<input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".png, .jpg, .jpeg" />
+<div class="photo-creation">
+    <div class="description">Add your photo</div>
+    
+    <div class="input-div">
+        <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".png, .jpg, .jpeg" />
+    </div>
+    
+    <div class="title-div">
+        <div class="title-title">Title:</div>
+        <div>
+            <input type="text" placeholder="Add a title to your image" [(ngModel)]="title"/>
+        </div>
+    </div>
 
-<input type="text" placeholder="your title" [(ngModel)]="title"/>
-<div (click)="upload()">Click to upload</div>
+    <button class="mybutton" (click)="upload()">Click to upload</button>
+    
+</div>
+
+
+
+
